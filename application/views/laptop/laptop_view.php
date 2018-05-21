@@ -38,7 +38,6 @@
 					<td><?php echo $laptop->harga ;?></td>
 					<td>
 						<button type="button" class="btn btn-waring" onclick="edit_laptop(<?php echo $laptop->id_laptop; ?>)">Edit</button>
-
 						<button class="btn btn-danger" onclick="delete_laptop(<?php echo $laptop->id_laptop; ?>)">Hapus</button>
 					</td>
 				</tr>
@@ -74,7 +73,7 @@
 			if(save_method == 'add'){
 				url = '<?php echo site_url('Laptop/laptop_add') ;?>';
 			} else {
-				url = '<?php echo site_url('Laptop/update_laptop') ;?>';
+				url = '<?php echo site_url('Laptop/update_data') ;?>';
 			}
 
 			$.ajax({
@@ -97,7 +96,7 @@
 			$('#form')[0].reset();
 
 			$.ajax({
-				url: "<?php echo site_url('laptop/ajax_edit') ;?>/"+id,
+				url: "<?php echo site_url('laptop/edit_data/') ;?>/"+id,
 				type: "GET",
 				dataType: "JSON",
 				success: function(data){
@@ -147,32 +146,36 @@
       	<input type="hidden" value="" name="id">
 
       	<div class="form-body">
-      		<div class="form-group">
-      			<div class="col-md-20">
+      		<div class="form-group row">
+      			<label class="col-md-3 col-form-label">Merk Laptop</label>
+      			<div class="col-md-9">
       				<input type="text" name="merk" placeholder="Merk Laptop" class="form-control">
       			</div>
       		</div>
       	</div>
 
       	<div class="form-body">
-      		<div class="form-group">
-      			<div class="col-md-20">
+      		<div class="form-group row">
+      			<label class="col-md-3 col-form-label">Type Laptop</label>
+      			<div class="col-md-9">
       				<input type="text" name="type" placeholder="Type Laptop" class="form-control">
       			</div>
       		</div>
       	</div>
 
       	<div class="form-body">
-      		<div class="form-group">
-      			<div class="col-md-20">
+      		<div class="form-group row">
+      			<label class="col-md-3 col-form-label">Stock Laptop</label>
+      			<div class="col-md-9">
       				<input type="text" name="stok" placeholder="Stock" class="form-control">
       			</div>
       		</div>
       	</div>
 
-      	<div class="form-body">
-      		<div class="form-group">
-      			<div class="col-md-20">
+      	<div class="form-body ">
+      		<div class="form-group row">
+      			<label class="col-md-3 col-form-label">Harga</label>
+      			<div class="col-md-9">
       				<input type="text" name="harga" placeholder="Harga" class="form-control">
       			</div>
       		</div>

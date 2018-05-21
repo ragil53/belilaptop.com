@@ -18,10 +18,16 @@ class Model_laptop extends CI_Model {
 
 	public function get_by_id($id)
 	{
-		$this->db->form($this->table);
+		$this->db->from($this->table);
 		$this->db->where('id_laptop', $id);
 		$query = $this->db->get();
 		return $query->row();
+	}
+
+	public function update_data($where, $data)
+	{
+		$this->db->update($this->table, $data, $where);
+		return $this->db->affected_rows();
 	}
 
 	public function delete_by_id($id)
