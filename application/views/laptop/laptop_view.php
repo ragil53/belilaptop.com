@@ -107,7 +107,7 @@
 					$('[name="harga"]').val(data.harga);
 
 					$('#modal_form').modal('show');
-					$('.modal_title').text('Edit Laptop');
+					$('.modal-title').text('Edit Laptop');
 				},
 				error: function(jqXHR, textStatus, errorThrown){
 					alert('Error Pengambilan Data Gagal');
@@ -143,7 +143,7 @@
       </div>
       <div class="modal-body form">
       <form action="#" id="form" class="form-horizontal">
-      	<input type="hidden" value="" name="id">
+      	<input type="hidden" value="" name="id_laptop">
 
       	<div class="form-body">
       		<div class="form-group row">
