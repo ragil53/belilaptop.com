@@ -26,4 +26,10 @@ class Laptop extends CI_Controller{
 		$data = $this->model_laptop->get_by_id($id);
 		echo json_encode($data);
 	}
+
+	public function delete_laptop($id)
+	{
+		$this->model_laptop->delete_by_id($id);
+		echo json_encode(array("status"=>TRUE));
+	}
 }

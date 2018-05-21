@@ -120,7 +120,7 @@
 			if(confirm('Are You Sure Delete This Data?')){
 
 				$.ajax({
-					url: "<?php echo site_url('index.php/Laptop/delete_laptop') ;?>/"+id,
+					url: "<?php echo site_url('Laptop/delete_laptop') ;?>/"+id,
 					type: "POST",
 					dataType: "JSON",
 					success: function(data) {
